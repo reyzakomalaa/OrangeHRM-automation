@@ -18,5 +18,4 @@ public class env {
 //    }
     protected static String fakerUsername = faker.name().username();
     protected static String createPassword = "P@ssw0rd123";
-    protected static String validateUsername;
 }
