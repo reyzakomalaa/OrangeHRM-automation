@@ -10,7 +10,7 @@ public class hooks extends env {
     public void before(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new ChromeDriver();
-        driver.get("");
+        driver.get("employee.sdcillsy.my.id");
         driver.manage().window().maximize();
     }
 
