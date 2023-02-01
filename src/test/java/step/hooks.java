@@ -10,7 +10,7 @@ public class hooks extends env {
     public void before(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new ChromeDriver();
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get("");
         driver.manage().window().maximize();
     }
 
