@@ -13,4 +13,9 @@ public class pageHome {
     public By getBtnPIM() {
         return btnPIM;
     }
+    By btnTime = By.xpath("//a[@href = '/web/index.php/time/viewTimeModule']");
+
+    public By getBtnTime() {
+        return btnTime;
+    }
 }
