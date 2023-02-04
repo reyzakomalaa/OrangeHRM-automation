@@ -31,9 +31,6 @@ public class hooks extends env {
     @After
     public void after(Scenario scenario) throws IOException {
         String savePhotoFolder;
-        Date date = new Date();
-        SimpleDateFormat DateFor = new SimpleDateFormat("yyMMdd");
-        String timestamp = DateFor.format(date);
 
         if (scenario.isFailed()){
             savePhotoFolder = "/src/test/resources/screenshots/failed/";
@@ -42,7 +39,7 @@ public class hooks extends env {
         }
 
         File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir") + savePhotoFolder + scenario.getName() + " " + timestamp + ".png"));
+        FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir") + savePhotoFolder + scenario.getName() + ".png"));
         driver.quit();
     }
 }

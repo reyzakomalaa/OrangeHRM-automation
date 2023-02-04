@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "step",
-        plugin = "html:target/OrangeHRM_report.html",
-        tags = "@ChangeProfile"
+//        plugin = "html:target/OrangeHRM_report.html",
+        tags = "@PunchOut"
 )
 public class runAll {
 }
