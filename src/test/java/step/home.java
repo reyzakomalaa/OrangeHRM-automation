@@ -27,8 +27,8 @@ public class home extends env {
     @When("user click My Info")
     public void userClickMyInfo() {
         wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(elementHome.getBtnPIM()));
+        wait.until(ExpectedConditions.elementToBeClickable(elementHome.getBtnMyInfo()));
 
-        driver.findElement(elementHome.getBtnPIM()).click();
+        driver.findElement(elementHome.getBtnMyInfo()).click();
     }
 }

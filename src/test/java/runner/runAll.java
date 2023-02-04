@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "step",
-        plugin = "html:target/CreateEmployeeAccount_withCredentials_report.html",
+        plugin = "html:target/OrangeHRM_report.html",
         tags = "@ChangeProfile"
 )
 public class runAll {
