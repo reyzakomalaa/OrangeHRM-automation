@@ -18,4 +18,9 @@ public class pageHome {
     public By getBtnTime() {
         return btnTime;
     }
+    By btnMyInfo = By.xpath("//a[@href = '/web/index.php/pim/viewMyDetails']");
+
+    public By getBtnMyInfo() {
+        return btnMyInfo;
+    }
 }

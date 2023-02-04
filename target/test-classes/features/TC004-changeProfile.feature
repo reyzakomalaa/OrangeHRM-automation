@@ -1,10 +1,10 @@
 Feature: Ensure user can change profile
 
-#  @Test
+  @ChangeProfile
   Scenario: As a user, I can change my Profile (Nationality, Marital Status, Gender)
     Given user is in Login page
-    When  user input username
-    And user input password
+    When  user input Employee username
+    And user input Employee password
     And user click Login
     When user click PIM
     And user click Pencil icon

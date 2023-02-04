@@ -15,11 +15,12 @@ public class env {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public String adminUsername = "Admin";
-    public String adminPassword = "s3Kol4HQA!*";
+    public String adminPassword = "admin123";
 
     //Untuk random yang hasilnya selalu sama untuk 1x run semua test case secara bersamaan
     public String randomFirstName = faker.name().firstName();
     public String randomLastName = faker.name().lastName();
+    public String randomUsername = faker.name().username();
 
     //Untuk random yang hasilnya selalu berbeda untuk 1x run semua test case secara bersamaan
 //    public String fakerFirstName(){
@@ -30,11 +31,10 @@ public class env {
 //        String randomLastName = faker.name().lastName();
 //        return randomLastName;
 //    }
-
-    public String fakerUsername(){
-        String randomUsername = faker.name().username();
-        return randomUsername;
-    }
+//    public String fakerUsername(){
+//        String randomUsername = faker.name().username();
+//        return randomUsername;
+//    }
     public String userPassword = "P@ssw0rd123";
     public int randomList;
     public int randomGender;

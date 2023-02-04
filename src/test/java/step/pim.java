@@ -10,6 +10,8 @@ import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class pim extends env {
@@ -29,15 +31,11 @@ public class pim extends env {
         wait.until(ExpectedConditions.elementToBeClickable(elementPIM.getFieldFirstName()));
 
         driver.findElement(elementPIM.getFieldFirstName()).sendKeys(randomFirstName);
-//        saveFirstName = driver.findElement(elementPIM.getFieldFirstName()).getText();
-//        System.out.println(saveFirstName);
     }
 
     @And("user fill Last Name")
     public void user_fill_last_name() {
         driver.findElement(elementPIM.getFieldLastName()).sendKeys(randomLastName);
-//        saveLastName = driver.findElement(elementPIM.getFieldLastName()).getText();
-//        System.out.println(saveLastName);
     }
 
     @And("user click Save")
@@ -51,7 +49,7 @@ public class pim extends env {
         String savedName = randomFirstName + " " + randomLastName;
 
         wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(elementPIM.getTxtEmployeeName()));
+        wait.until(ExpectedConditions.textToBe(elementPIM.getTxtEmployeeName(), savedName));
 
         verifyName = driver.findElement(elementPIM.getTxtEmployeeName()).getText();
         Assert.assertEquals(verifyName, savedName);
@@ -67,7 +65,15 @@ public class pim extends env {
         wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(elementPIM.getFieldUsername()));
 
-        driver.findElement(elementPIM.getFieldUsername()).sendKeys(fakerUsername());
+        driver.findElement(elementPIM.getFieldUsername()).sendKeys(randomUsername);
+
+        try {
+            FileWriter writer = new FileWriter("src/test/resources/files/username.txt", false);
+            writer.write(randomUsername + System.lineSeparator());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("user select status Enabled")
@@ -78,6 +84,14 @@ public class pim extends env {
     @And("user fill Password")
     public void userFillPassword() {
         driver.findElement(elementPIM.getFieldPassword()).sendKeys(userPassword);
+
+        try {
+            FileWriter writer = new FileWriter("src/test/resources/files/password.txt", false);
+            writer.write(userPassword + System.lineSeparator());
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("user fill Confirm Password")

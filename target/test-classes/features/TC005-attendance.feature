@@ -1,10 +1,10 @@
 Feature: Ensure user can Punch In and Punch Out
 
-#  @Test
+  @Attendance
   Scenario: As a user, I can do Punch In
     Given user is in Login page
-    When  user input username
-    And user input password
+    When  user input Employee username
+    And user input Employee password
     And user click Login
     When user click Time
     And user click Attendance
@@ -12,11 +12,11 @@ Feature: Ensure user can Punch In and Punch Out
     And user click In
     Then user success Punch In OR Out
 
-#  @Test
+  @Attendance
   Scenario: As a user, I can do Punch Out
     Given user is in Login page
-    When  user input username
-    And user input password
+    When  user input Employee username
+    And user input Employee password
     And user click Login
     When user click Time
     And user click Attendance
